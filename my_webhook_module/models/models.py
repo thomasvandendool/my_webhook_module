@@ -11,8 +11,8 @@ class SaleOrder(models.Model):
     def create(self, vals):
         order = super(SaleOrder, self).create(vals)
         
-        # webhook_url = "https://webhook.site/e96c9c48-116d-4cce-9629-014595a1d519"
-        webhook_url = "http://host.docker.internal:3000/api/v1/orders"
+        webhook_url = "https://webhook.site/e96c9c48-116d-4cce-9629-014595a1d519"
+        # webhook_url = "http://host.docker.internal:3000/api/v1/orders"
         payload = {
             'orderd': order.id
         }
