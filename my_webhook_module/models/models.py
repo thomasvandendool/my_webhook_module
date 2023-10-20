@@ -1,4 +1,4 @@
-from odoo import api, models
+from odoo import api, models, fields
 import requests
 import logging
 
@@ -6,6 +6,8 @@ _logger = logging.getLogger(__name__)
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
+
+    track_and_trace_field = fields.Text(string="some track and trace data")
 
     @api.model
     def create(self, vals):
